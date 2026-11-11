@@ -76,8 +76,21 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--
 /* ОБО МНЕ */
 .about { padding: 150px 0; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+/* Стили для вашего фото */
+.about-img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: 150px 150px 20px 20px; /* Красивая арка */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    display: block;
+}
+
+/* Заглушка (если фото не загрузится) */
 .image-placeholder { width: 100%; aspect-ratio: 4/5; background: var(--bg-alt); display: flex; flex-direction: column; align-items: center; justify-content: center; color: var(--gold); font-family: var(--font-serif); font-size: 1.2rem; border-radius: 150px 150px 20px 20px; }
 .image-placeholder svg { width: 60px; height: 60px; margin-bottom: 15px; }
+
 .about-text p { color: var(--text-light); margin-bottom: 25px; font-size: 1.05rem; font-weight: 300; }
 
 /* МЕТОД */
