@@ -201,51 +201,66 @@ footer { padding: 60px 0; background: #111; color: #888; text-align: center; }
 .modal-content { background: var(--bg-main); padding: 60px 40px; text-align: center; max-width: 400px; width: 90%; border: 1px solid var(--gold); border-radius: 10px;}
 .modal-content h3 { font-size: 2rem; margin-bottom: 15px; }
 
-/* Адаптив */
+/* =========================================
+   АДАПТИВНОСТЬ (Мобильная версия)
+   ========================================= */
 @media (max-width: 1024px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
     .psy-grid { grid-template-columns: 1fr; gap: 40px; }
     .blog-card-wrapper { grid-template-columns: 1fr; }
     .article-title { font-size: 2.5rem; }
 }
+
 @media (max-width: 900px) {
     .about-grid, .certificate-grid { grid-template-columns: 1fr; }
     .hero h1 { font-size: 3rem; }
-    .nav-links { display: none; }
     .hero { padding: 180px 0 100px 0; }
     .services-grid { grid-template-columns: 1fr; }
-}
-/* =========================================
-   ИСПРАВЛЕНИЕ МОБИЛЬНОЙ ШАПКИ
-   ========================================= */
-@media (max-width: 900px) {
-    /* Уменьшаем отступы в шапке */
+
+    /* ИСПРАВЛЕННАЯ ШАПКА ДЛЯ ТЕЛЕФОНОВ */
     #navbar {
-        padding: 15px 0;
+        padding: 12px 0;
     }
     
     .nav-content {
+        display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0 15px;
     }
 
-    /* Делаем логотип чуть меньше */
     .logo-name {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
     .logo-sub {
-        font-size: 0.55rem;
+        font-size: 0.5rem;
+        letter-spacing: 1px;
     }
 
-    /* ПОЛНОСТЬЮ СКРЫВАЕМ ссылки (Обо мне, Услуги и т.д.) на телефоне */
+    /* Делаем меню со свайпом (горизонтальный скролл) */
     .nav-links {
-        display: none !important; 
+        display: flex;
+        gap: 15px;
+        overflow-x: auto; /* Включаем скролл */
+        white-space: nowrap; /* Запрещаем перенос строк */
+        margin: 0 15px;
+        padding-bottom: 5px;
+        
+        /* Прячем некрасивый скроллбар */
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar {
+        display: none;
     }
 
-    /* Кнопку "Записаться" делаем аккуратнее */
+    .nav-links a {
+        font-size: 0.7rem;
+    }
+
     .btn-nav {
-        padding: 8px 15px;
-        font-size: 0.65rem;
-        margin-left: auto; /* Прижимаем к правому краю */
+        padding: 8px 12px;
+        font-size: 0.6rem;
+        flex-shrink: 0;
     }
 }
