@@ -56,39 +56,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-
-    // 5. АВТОМАТИЧЕСКАЯ ЗАГРУЗКА СТАТЕЙ ИЗ JSON
-    async function loadArticles() {
-        const container = document.getElementById('blog-container');
-        if (!container) return; // Если блока нет на странице, ничего не делаем
-
-        try {
-            const response = await fetch('articles.json');
-            const articles = await response.json();
-
-            articles.forEach(article => {
-                const cardHTML = `
-                    <a href="${article.link}" class="blog-card">
-                        <div class="blog-card-img">
-                            <img src="${article.img}" alt="${article.title}">
-                        </div>
-                        <div class="blog-card-content">
-                            <span class="blog-category">${article.category}</span>
-                            <h3>${article.title}</h3>
-                            <p>${article.desc}</p>
-                            <span class="blog-read-more">Читать статью &rarr;</span>
-                        </div>
-                    </a>
-                `;
-                container.innerHTML += cardHTML;
-            });
-        } catch (error) {
-            console.error('Ошибка при загрузке статей:', error);
-            container.innerHTML = '<p style="text-align:center; width:100%;">Не удалось загрузить статьи.</p>';
-        }
-    }
-
-    loadArticles();
 });
 
 function closeModal() {

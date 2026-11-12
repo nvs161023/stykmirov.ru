@@ -35,7 +35,7 @@
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#process">Процесс</a></li>
-                <li><a href="blog-psy2.html">Статьи</a></li>
+                <li><a href="#blog">Статьи</a></li> <!-- Ведет на блок карточек -->
                 <li><a href="#reviews">Отзывы</a></li>
                 <li><a href="#certificate">Сертификат</a></li>
                 <li class="mobile-only-btn"><a href="#contact" class="btn btn-nav">Записаться</a></li>
@@ -227,7 +227,7 @@
         </div>
     </section>
 
-    <!-- БЛОК АНОНСА СТАТЕЙ (АВТОМАТИЧЕСКИЙ) -->
+    <!-- БЛОК АНОНСА СТАТЕЙ (СТАТИЧЕСКИЙ) -->
     <section class="blog-preview" id="blog">
         <div class="container reveal">
             <div class="section-header">
@@ -235,9 +235,32 @@
                 <p class="section-subtitle">Читайте о подходе и методах работы</p>
             </div>
             
-            <!-- Карточки появятся здесь автоматически из файла articles.json -->
-            <div class="blog-card-wrapper" id="blog-container">
-                <!-- Загрузка... -->
+            <div class="blog-card-wrapper">
+                <!-- Статья 1 -->
+                <a href="blog-psy2.html" class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="psy2-photo.jpg" alt="PSY 2.0">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Методология</span>
+                        <h3>Что такое PSY 2.0 и почему классическая терапия иногда не работает?</h3>
+                        <p>Узнайте, почему работа с телесными ощущениями может быть эффективнее классического психоанализа.</p>
+                        <span class="blog-read-more">Читать статью &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Статья 2 -->
+                <a href="blog-burnout.html" class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="burnout-photo.jpg" alt="Выгорание">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Самопомощь</span>
+                        <h3>Тревога на фоне и выгорание: почему отдых не помогает и что делать?</h3>
+                        <p>Чувствуете себя выжатым лимоном даже после отпуска? Разбираем причины и шаги к восстановлению.</p>
+                        <span class="blog-read-more">Читать статью &rarr;</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
