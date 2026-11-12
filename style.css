@@ -125,23 +125,27 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--
 .blog-card { background: var(--bg-main); border-radius: 15px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 .blog-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(184, 149, 92, 0.15); border-color: var(--gold); }
 
-/* ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ КАРТИНОК В БЛОГЕ */
+/* ИСПРАВЛЕНО: Картинки в карточках теперь вписываются целиком (contain) */
 .blog-card-img { 
     width: 100%; 
-    height: 240px; 
-    background: var(--bg-alt); 
+    height: 260px; 
+    background: var(--bg-main); /* Белый фон, чтобы пустые края не бросались в глаза */
     position: relative; 
     overflow: hidden; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Небольшой отступ от краев */
+    border-bottom: 1px solid rgba(0,0,0,0.03);
 }
 .blog-card-img img { 
     width: 100%; 
     height: 100%; 
-    object-fit: cover; 
-    object-position: center; 
+    object-fit: contain; /* Вписывает картинку целиком, не обрезая */
     transition: transform 0.4s ease; 
 }
 .blog-card:hover .blog-card-img img { 
-    transform: scale(1.05); 
+    transform: scale(1.03); 
 }
 
 .blog-card-content { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; }
@@ -156,7 +160,15 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--
 .article-title { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; text-align: left; }
 .article-meta { color: var(--gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 50px; border-bottom: 1px solid rgba(184, 149, 92, 0.2); padding-bottom: 20px; }
 .article-hero-image { width: 100%; margin-bottom: 50px; border-radius: 10px; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
-.article-hero-image img { width: 100%; height: auto; display: block; object-fit: cover; max-height: 500px; }
+
+/* ИСПРАВЛЕНО: Внутри статьи картинка показывается целиком, без обрезки */
+.article-hero-image img { 
+    width: 100%; 
+    height: auto; /* Высота подстраивается под картинку */
+    display: block; 
+    /* Убраны object-fit: cover и max-height, из-за которых резалась инфографика */
+}
+
 .article-content { max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: var(--text-light); }
 .article-content h2 { font-size: 2.2rem; margin: 50px 0 20px 0; text-align: left; color: var(--text-dark); }
 .article-content p { margin-bottom: 20px; }
