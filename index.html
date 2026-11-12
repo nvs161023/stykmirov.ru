@@ -19,13 +19,16 @@
     <nav id="navbar">
         <div class="container nav-content">
             <div class="logo">
-                <span class="logo-name">Елена Накорякова</span>
-                <span class="logo-sub">Помогающий практик</span>
+                <a href="index.html" style="text-decoration: none;">
+                    <span class="logo-name">Елена Накорякова</span>
+                    <span class="logo-sub">Помогающий практик</span>
+                </a>
             </div>
             <ul class="nav-links">
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#process">Процесс</a></li>
+                <li><a href="blog-psy2.html">Статьи</a></li> <!-- Ссылка на статьи -->
                 <li><a href="#reviews">Отзывы</a></li>
                 <li><a href="#certificate">Сертификат</a></li>
             </ul>
@@ -76,7 +79,6 @@
     <section class="about" id="about">
         <div class="container about-grid reveal">
             <div class="about-image">
-                <!-- Блок для вашего фото. Загрузите файл portrait.jpg в GitHub -->
                 <img src="portrait.jpg" alt="Елена Накорякова" class="about-img">
             </div>
             <div class="about-text">
@@ -97,7 +99,7 @@
         </div>
     </section>
 
-    <!-- НОВЫЙ БЛОК: ПОДХОД PSY2.0 -->
+    <!-- ПОДХОД PSY2.0 -->
     <section class="psy-approach">
         <div class="container reveal">
             <div class="psy-grid">
@@ -178,7 +180,7 @@
                     <p>Игровая практика для глубокого самопознания. Позволяет мягко обойти защитные механизмы психики и найти ответы на важные вопросы.</p>
                 </div>
 
-                <!-- 6 (ИЗМЕНЕНО НА "ГРУППОВАЯ РАБОТА") -->
+                <!-- 6 -->
                 <div class="service-card reveal" style="transition-delay: 500ms;">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -217,6 +219,44 @@
                     <div class="step-num">4</div>
                     <h4>Результат</h4>
                     <p>Вы получаете ясность, инструменты для решения и план дальнейших действий.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК АНОНСА СТАТЕЙ -->
+    <section class="blog-preview" id="blog">
+        <div class="container reveal">
+            <div class="section-header">
+                <h2 class="section-title">Полезные материалы</h2>
+                <p class="section-subtitle">Читайте о подходе и методах работы</p>
+            </div>
+            
+            <div class="blog-card-wrapper">
+                <!-- Карточка 1 (Ссылка на статью) -->
+                <a href="blog-psy2.html" class="blog-card">
+                    <div class="blog-card-img">
+                        <img src="psy2-photo.jpg" alt="PSY 2.0">
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Методология</span>
+                        <h3>Что такое PSY 2.0 и почему классическая терапия иногда не работает?</h3>
+                        <p>Узнайте, почему работа с телесными ощущениями может быть эффективнее классического психоанализа.</p>
+                        <span class="blog-read-more">Читать статью &rarr;</span>
+                    </div>
+                </a>
+
+                <!-- Карточка 2 (Заглушка для будущих статей) -->
+                <div class="blog-card disabled">
+                    <div class="blog-card-img">
+                        <div class="blog-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 12 16 9 16 5C16 1 12 1 12 1C12 1 8 1 8 5C8 9 12 12 12 12Z"/><path d="M12 16C12 16 17 14 19 10C21 6 19 3 19 3"/><path d="M12 16C12 16 7 14 5 10C3 6 5 3 5 3"/></svg></div>
+                    </div>
+                    <div class="blog-card-content">
+                        <span class="blog-category">Скоро</span>
+                        <h3>Как справиться с тревогой: 3 техники самопомощи</h3>
+                        <p>Новая статья уже готовится к публикации.</p>
+                        <span class="blog-read-more">В разработке</span>
+                    </div>
                 </div>
             </div>
         </div>
