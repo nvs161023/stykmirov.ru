@@ -24,15 +24,27 @@
                     <span class="logo-sub">Помогающий практик</span>
                 </a>
             </div>
-            <ul class="nav-links">
+            
+            <!-- Кнопка бургер-меню (видна только на телефонах) -->
+            <div class="burger" id="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Само меню -->
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#services">Услуги</a></li>
                 <li><a href="#process">Процесс</a></li>
-                <li><a href="blog-psy2.html">Статьи</a></li> <!-- Ссылка на статьи -->
+                <li><a href="blog-psy2.html">Статьи</a></li>
                 <li><a href="#reviews">Отзывы</a></li>
                 <li><a href="#certificate">Сертификат</a></li>
+                <li class="mobile-only-btn"><a href="#contact" class="btn btn-nav">Записаться</a></li>
             </ul>
-            <a href="#contact" class="btn btn-nav">Записаться</a>
+            
+            <!-- Кнопка для компьютера -->
+            <a href="#contact" class="btn btn-nav desktop-only-btn">Записаться</a>
         </div>
     </nav>
 
@@ -135,7 +147,6 @@
             </div>
             
             <div class="services-grid">
-                <!-- 1 -->
                 <div class="service-card reveal">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C12 2 16 6 16 10C16 14 12 18 12 18C12 18 8 14 8 10C8 6 12 2 12 2Z"/><path d="M12 18C12 18 18 15 20 10C22 5 18 2 18 2"/><path d="M12 18C12 18 6 15 4 10C2 5 6 2 6 2"/><path d="M12 22V18"/></svg>
@@ -144,7 +155,6 @@
                     <p>Работа с самооценкой, поиск истинных желаний, выявление внутренних блоков. Помогаю услышать свой истинный голос.</p>
                 </div>
 
-                <!-- 2 -->
                 <div class="service-card reveal" style="transition-delay: 100ms;">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -153,7 +163,6 @@
                     <p>Настройка баланса между разумом, телом и эмоциями. Снятие тревожности и возвращение ощущения внутреннего покоя.</p>
                 </div>
 
-                <!-- 3 -->
                 <div class="service-card reveal" style="transition-delay: 200ms;">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
@@ -162,7 +171,6 @@
                     <p>Помощь в прохождении сложных жизненных периодов и кризисов. Безопасное пространство для принятия важных решений.</p>
                 </div>
 
-                <!-- 4 -->
                 <div class="service-card reveal" style="transition-delay: 300ms;">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 12 16 9 16 5C16 1 12 1 12 1C12 1 8 1 8 5C8 9 12 12 12 12Z"/><path d="M12 16C12 16 17 14 19 10C21 6 19 3 19 3"/><path d="M12 16C12 16 7 14 5 10C3 6 5 3 5 3"/></svg>
@@ -171,7 +179,6 @@
                     <p>Пошаговое движение к новой, более осознанной жизни. Формирование новых привычек и стратегии личностного роста.</p>
                 </div>
 
-                <!-- 5 -->
                 <div class="service-card reveal" style="transition-delay: 400ms;">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -180,7 +187,6 @@
                     <p>Игровая практика для глубокого самопознания. Позволяет мягко обойти защитные механизмы психики и найти ответы на важные вопросы.</p>
                 </div>
 
-                <!-- 6 -->
                 <div class="service-card reveal" style="transition-delay: 500ms;">
                     <div class="service-icon">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
@@ -233,7 +239,6 @@
             </div>
             
             <div class="blog-card-wrapper">
-                <!-- Карточка 1 (Ссылка на статью) -->
                 <a href="blog-psy2.html" class="blog-card">
                     <div class="blog-card-img">
                         <img src="psy2-photo.jpg" alt="PSY 2.0">
@@ -246,7 +251,6 @@
                     </div>
                 </a>
 
-                <!-- Карточка 2 (Заглушка для будущих статей) -->
                 <div class="blog-card disabled">
                     <div class="blog-card-img">
                         <div class="blog-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 12 16 9 16 5C16 1 12 1 12 1C12 1 8 1 8 5C8 9 12 12 12 12Z"/><path d="M12 16C12 16 17 14 19 10C21 6 19 3 19 3"/><path d="M12 16C12 16 7 14 5 10C3 6 5 3 5 3"/></svg></div>

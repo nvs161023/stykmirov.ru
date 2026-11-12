@@ -27,15 +27,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById('consultationForm');
     const modal = document.getElementById('successModal');
     
-    form.addEventListener('submit', (e) => {
-        setTimeout(() => {
-            modal.classList.add('active');
-            form.reset();
-        }, 500); 
-    });
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            setTimeout(() => {
+                modal.classList.add('active');
+                form.reset();
+            }, 500); 
+        });
+    }
+
+    // 4. Работа мобильного бургер-меню
+    const burger = document.getElementById("burger-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    if (burger) {
+        burger.addEventListener("click", () => {
+            // Переключаем классы для анимации
+            burger.classList.toggle("active");
+            navLinks.classList.toggle("active");
+        });
+    }
+
+    // Закрываем меню при клике на любую ссылку внутри него
+    if (navLinks) {
+        const menuItems = navLinks.querySelectorAll('a');
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                burger.classList.remove("active");
+                navLinks.classList.remove("active");
+            });
+        });
+    }
 });
 
 // Функция закрытия модального окна
 function closeModal() {
-    document.getElementById('successModal').classList.remove('active');
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
 }

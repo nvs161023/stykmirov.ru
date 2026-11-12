@@ -202,7 +202,7 @@ footer { padding: 60px 0; background: #111; color: #888; text-align: center; }
 .modal-content h3 { font-size: 2rem; margin-bottom: 15px; }
 
 /* =========================================
-   АДАПТИВНОСТЬ (Мобильная версия)
+   АДАПТИВНОСТЬ (Мобильная версия с бургер-меню)
    ========================================= */
 @media (max-width: 1024px) {
     .services-grid { grid-template-columns: repeat(2, 1fr); }
@@ -217,50 +217,77 @@ footer { padding: 60px 0; background: #111; color: #888; text-align: center; }
     .hero { padding: 180px 0 100px 0; }
     .services-grid { grid-template-columns: 1fr; }
 
-    /* ИСПРАВЛЕННАЯ ШАПКА ДЛЯ ТЕЛЕФОНОВ */
-    #navbar {
-        padding: 12px 0;
+    /* Скрываем десктопную кнопку */
+    .desktop-only-btn { display: none !important; }
+    
+    /* Стили для бургер-меню */
+    .burger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        cursor: pointer;
+        z-index: 101;
+    }
+    .burger span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        background-color: var(--text-dark);
+        transition: all 0.3s ease;
     }
     
-    .nav-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 15px;
+    /* Анимация бургера в крестик */
+    .burger.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .burger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .burger.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 
-    .logo-name {
-        font-size: 1.1rem;
-    }
-    .logo-sub {
-        font-size: 0.5rem;
-        letter-spacing: 1px;
-    }
-
-    /* Делаем меню со свайпом (горизонтальный скролл) */
+    /* Меню на мобильном */
     .nav-links {
-        display: flex;
-        gap: 15px;
-        overflow-x: auto; /* Включаем скролл */
-        white-space: nowrap; /* Запрещаем перенос строк */
-        margin: 0 15px;
-        padding-bottom: 5px;
-        
-        /* Прячем некрасивый скроллбар */
-        -ms-overflow-style: none;
-        scrollbar-width: none;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Прячем меню за экран */
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-main);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: right 0.4s ease;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        z-index: 100;
     }
-    .nav-links::-webkit-scrollbar {
-        display: none;
+
+    /* Показываем меню при клике */
+    .nav-links.active {
+        right: 0;
     }
 
     .nav-links a {
-        font-size: 0.7rem;
+        font-size: 1.2rem;
     }
 
-    .btn-nav {
-        padding: 8px 12px;
-        font-size: 0.6rem;
-        flex-shrink: 0;
+    /* Кнопка записи внутри мобильного меню */
+    .mobile-only-btn {
+        margin-top: 20px;
+    }
+    .mobile-only-btn .btn-nav {
+        font-size: 1rem;
+        padding: 12px 30px;
+    }
+}
+
+/* На компьютере бургер и кнопку внутри меню не показываем */
+@media (min-width: 901px) {
+    .burger, .mobile-only-btn {
+        display: none !important;
     }
 }
