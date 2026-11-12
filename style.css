@@ -215,3 +215,37 @@ footer { padding: 60px 0; background: #111; color: #888; text-align: center; }
     .hero { padding: 180px 0 100px 0; }
     .services-grid { grid-template-columns: 1fr; }
 }
+/* =========================================
+   ИСПРАВЛЕНИЕ МОБИЛЬНОЙ ШАПКИ
+   ========================================= */
+@media (max-width: 900px) {
+    /* Уменьшаем отступы в шапке */
+    #navbar {
+        padding: 15px 0;
+    }
+    
+    .nav-content {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Делаем логотип чуть меньше */
+    .logo-name {
+        font-size: 1.2rem;
+    }
+    .logo-sub {
+        font-size: 0.55rem;
+    }
+
+    /* ПОЛНОСТЬЮ СКРЫВАЕМ ссылки (Обо мне, Услуги и т.д.) на телефоне */
+    .nav-links {
+        display: none !important; 
+    }
+
+    /* Кнопку "Записаться" делаем аккуратнее */
+    .btn-nav {
+        padding: 8px 15px;
+        font-size: 0.65rem;
+        margin-left: auto; /* Прижимаем к правому краю */
+    }
+}
