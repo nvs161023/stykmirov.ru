@@ -124,10 +124,26 @@ h1, h2, h3, h4 { font-family: var(--font-serif); font-weight: 400; color: var(--
 .blog-card-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1000px; margin: 0 auto; }
 .blog-card { background: var(--bg-main); border-radius: 15px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; transition: all 0.4s ease; border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
 .blog-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(184, 149, 92, 0.15); border-color: var(--gold); }
-.blog-card-img { width: 100%; height: 200px; background: var(--text-dark); position: relative; }
-.blog-card-img img { width: 100%; height: 100%; object-fit: cover; }
-.blog-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #2c2a29, #1a1a1a); color: var(--gold); }
-.blog-placeholder svg { width: 60px; height: 60px; opacity: 0.7; }
+
+/* ИСПРАВЛЕННЫЕ СТИЛИ ДЛЯ КАРТИНОК В БЛОГЕ */
+.blog-card-img { 
+    width: 100%; 
+    height: 240px; 
+    background: var(--bg-alt); 
+    position: relative; 
+    overflow: hidden; 
+}
+.blog-card-img img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center; 
+    transition: transform 0.4s ease; 
+}
+.blog-card:hover .blog-card-img img { 
+    transform: scale(1.05); 
+}
+
 .blog-card-content { padding: 30px; display: flex; flex-direction: column; flex-grow: 1; }
 .blog-category { color: var(--gold); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; font-weight: 500; margin-bottom: 10px; }
 .blog-card-content h3 { font-size: 1.5rem; margin-bottom: 15px; line-height: 1.3; color: var(--text-dark); }
