@@ -42,13 +42,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (burger) {
         burger.addEventListener("click", () => {
-            // Переключаем классы для анимации
             burger.classList.toggle("active");
             navLinks.classList.toggle("active");
         });
     }
 
-    // Закрываем меню при клике на любую ссылку внутри него
     if (navLinks) {
         const menuItems = navLinks.querySelectorAll('a');
         menuItems.forEach(item => {
@@ -58,9 +56,41 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
+
+    // 5. АВТОМАТИЧЕСКАЯ ЗАГРУЗКА СТАТЕЙ ИЗ JSON
+    async function loadArticles() {
+        const container = document.getElementById('blog-container');
+        if (!container) return; // Если блока нет на странице, ничего не делаем
+
+        try {
+            const response = await fetch('articles.json');
+            const articles = await response.json();
+
+            articles.forEach(article => {
+                const cardHTML = `
+                    <a href="${article.link}" class="blog-card">
+                        <div class="blog-card-img">
+                            <img src="${article.img}" alt="${article.title}">
+                        </div>
+                        <div class="blog-card-content">
+                            <span class="blog-category">${article.category}</span>
+                            <h3>${article.title}</h3>
+                            <p>${article.desc}</p>
+                            <span class="blog-read-more">Читать статью &rarr;</span>
+                        </div>
+                    </a>
+                `;
+                container.innerHTML += cardHTML;
+            });
+        } catch (error) {
+            console.error('Ошибка при загрузке статей:', error);
+            container.innerHTML = '<p style="text-align:center; width:100%;">Не удалось загрузить статьи.</p>';
+        }
+    }
+
+    loadArticles();
 });
 
-// Функция закрытия модального окна
 function closeModal() {
     const modal = document.getElementById('successModal');
     if (modal) {

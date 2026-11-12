@@ -25,14 +25,12 @@
                 </a>
             </div>
             
-            <!-- Кнопка бургер-меню (видна только на телефонах) -->
             <div class="burger" id="burger-menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
 
-            <!-- Само меню -->
             <ul class="nav-links" id="nav-links">
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#services">Услуги</a></li>
@@ -43,7 +41,6 @@
                 <li class="mobile-only-btn"><a href="#contact" class="btn btn-nav">Записаться</a></li>
             </ul>
             
-            <!-- Кнопка для компьютера -->
             <a href="#contact" class="btn btn-nav desktop-only-btn">Записаться</a>
         </div>
     </nav>
@@ -138,7 +135,7 @@
         </div>
     </section>
 
-    <!-- УСЛУГИ (6 карточек) -->
+    <!-- УСЛУГИ -->
     <section class="services" id="services">
         <div class="container">
             <div class="section-header reveal">
@@ -230,7 +227,7 @@
         </div>
     </section>
 
-    <!-- БЛОК АНОНСА СТАТЕЙ -->
+    <!-- БЛОК АНОНСА СТАТЕЙ (АВТОМАТИЧЕСКИЙ) -->
     <section class="blog-preview" id="blog">
         <div class="container reveal">
             <div class="section-header">
@@ -238,30 +235,9 @@
                 <p class="section-subtitle">Читайте о подходе и методах работы</p>
             </div>
             
-            <div class="blog-card-wrapper">
-                <a href="blog-psy2.html" class="blog-card">
-                    <div class="blog-card-img">
-                        <img src="psy2-photo.jpg" alt="PSY 2.0">
-                    </div>
-                    <div class="blog-card-content">
-                        <span class="blog-category">Методология</span>
-                        <h3>Что такое PSY 2.0 и почему классическая терапия иногда не работает?</h3>
-                        <p>Узнайте, почему работа с телесными ощущениями может быть эффективнее классического психоанализа.</p>
-                        <span class="blog-read-more">Читать статью &rarr;</span>
-                    </div>
-                </a>
-
-                <div class="blog-card disabled">
-                    <div class="blog-card-img">
-                        <div class="blog-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12C12 12 16 9 16 5C16 1 12 1 12 1C12 1 8 1 8 5C8 9 12 12 12 12Z"/><path d="M12 16C12 16 17 14 19 10C21 6 19 3 19 3"/><path d="M12 16C12 16 7 14 5 10C3 6 5 3 5 3"/></svg></div>
-                    </div>
-                    <div class="blog-card-content">
-                        <span class="blog-category">Скоро</span>
-                        <h3>Как справиться с тревогой: 3 техники самопомощи</h3>
-                        <p>Новая статья уже готовится к публикации.</p>
-                        <span class="blog-read-more">В разработке</span>
-                    </div>
-                </div>
+            <!-- Карточки появятся здесь автоматически из файла articles.json -->
+            <div class="blog-card-wrapper" id="blog-container">
+                <!-- Загрузка... -->
             </div>
         </div>
     </section>
